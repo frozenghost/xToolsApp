@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:xtools/constants/consts.dart';
+
+import '../constants/consts.dart';
 
 class BankProfitCalculator {
   BankProfitCalculator(
@@ -7,13 +8,15 @@ class BankProfitCalculator {
       @required this.profitRate,
       @required this.requestDate,
       @required this.buyBackDate,
-      this.defaultDelayDate});
+      this.defaultDelayDate = 1,
+      this.defaultDaysOfYear = daysOfYear});
 
   final double profitRate;
   final DateTime requestDate;
   final DateTime buyBackDate;
   final int defaultDelayDate;
   final double fundAmount;
+  final int defaultDaysOfYear;
 
   double calculateProfit() {
     double result;
@@ -21,7 +24,7 @@ class BankProfitCalculator {
     result = fundAmount *
         profitRate *
         buyBackDate.difference(requestDate).inDays /
-        dayOfYear;
+        defaultDaysOfYear;
 
     return result;
   }
