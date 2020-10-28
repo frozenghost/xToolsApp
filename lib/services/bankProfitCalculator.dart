@@ -7,13 +7,13 @@ class BankProfitCalculator {
       {@required this.fundAmount,
       @required this.profitRate,
       @required this.requestDate,
-      @required this.buyBackDate,
+      @required this.keepDays,
       this.defaultDelayDate = 1,
       this.defaultDaysOfYear = daysOfYear});
 
   final double profitRate;
   final DateTime requestDate;
-  final DateTime buyBackDate;
+  final int keepDays;
   final int defaultDelayDate;
   final double fundAmount;
   final int defaultDaysOfYear;
@@ -21,10 +21,7 @@ class BankProfitCalculator {
   double calculateProfit() {
     double result;
 
-    result = fundAmount *
-        profitRate *
-        buyBackDate.difference(requestDate).inDays /
-        defaultDaysOfYear;
+    result = fundAmount * profitRate * keepDays / defaultDaysOfYear;
 
     return result;
   }

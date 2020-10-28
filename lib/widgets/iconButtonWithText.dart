@@ -30,7 +30,7 @@ class IconButtonWithText extends StatelessWidget {
           ),
           Text(
             text == null ? '' : text,
-            style: defaultIconTextStyle,
+            style: kdefaultIconTextStyle,
           )
         ],
       ),
