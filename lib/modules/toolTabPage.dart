@@ -22,7 +22,7 @@ class _ToolTabPageState extends State<ToolTabPage> {
         Expanded(
           child: Container(
             child: GridView.count(
-              crossAxisCount: defaultGridColumn,
+              crossAxisCount: kdefaultGridColumn,
               children: ItemGenerator().getToolModules(context),
             ),
           ),

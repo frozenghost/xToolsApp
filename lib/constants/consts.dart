@@ -5,14 +5,21 @@ import 'package:xtools/entities/tabItem.dart';
 import 'package:xtools/entities/toolModuleItem.dart';
 import 'package:xtools/enums/homePageTab.dart';
 
-const int daysOfYear = 365;
-const int defaultGridColumn = 3;
-const double bottomContainerHeight = 70.0;
+const int kdaysOfYear = 365;
+const int kdefaultGridColumn = 3;
+const double kbottomContainerHeight = 65.0;
+const int kdefaultConfirmDelay = 1;
+const int kdefaultBuyBackDelay = 1;
 
 const TextStyle kdefaultIconTextStyle = TextStyle(fontSize: 16.0);
 const TextStyle kDefaultFormLabelTextStyle = TextStyle(
   fontSize: 16.0,
   color: Colors.grey,
+);
+const TextStyle kformSelectButtonTextStyle = TextStyle(
+  color: Colors.blue,
+  fontWeight: FontWeight.bold,
+  fontSize: 16.0,
 );
 
 final List<TabItem> homePageTabIcons = [
