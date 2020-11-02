@@ -276,11 +276,21 @@ class _ProfitCalculationPageState extends State<ProfitCalculationPage> {
       content: result.generateResultWidget(),
       buttons: [
         DialogButton(
-          child: Text('OK'),
+          child: Text(
+            'OK',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
           onPressed: () => Navigator.pop(context),
         ),
         DialogButton(
-          child: Text('返回主页'),
+          child: Text(
+            '返回主页',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
           onPressed: () => Navigator.pushNamed(context, '/'),
         ),
       ],

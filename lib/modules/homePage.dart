@@ -31,6 +31,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('欢迎使用XTools'),
+        automaticallyImplyLeading: false,
       ),
       body: SafeArea(
         child: PageView.builder(
