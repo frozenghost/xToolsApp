@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:xtools/constants/consts.dart';
 import 'package:xtools/entities/tabItem.dart';
 import 'package:xtools/widgets/iconButtonWithText.dart';
+import 'package:xtools/widgets/toolCard.dart';
 
 class ItemGenerator {
   List<BottomNavigationBarItem> getHomePageBottomNavigationBarItem(
@@ -25,12 +26,8 @@ class ItemGenerator {
                 width: 1.2,
               ),
             ),
-            child: IconButtonWithText(
-              iconData: item.iconData,
-              text: item.displayText,
-              onTap: () {
-                Navigator.pushNamed(context, '/profit');
-              },
+            child: ToolCard(
+              item: item,
             ),
           ),
         )

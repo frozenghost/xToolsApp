@@ -6,7 +6,7 @@ import 'package:xtools/entities/toolModuleItem.dart';
 import 'package:xtools/enums/homePageTab.dart';
 
 const int kdaysOfYear = 365;
-const int kdefaultGridColumn = 3;
+const int kdefaultGridColumn = 1;
 const double kbottomContainerHeight = 65.0;
 const int kdefaultConfirmDelay = 1;
 const int kdefaultBuyBackDelay = 1;
@@ -42,5 +42,8 @@ final List<ToolModuleItem> toolModules = [
       moduleId: 10001,
       moduleName: 'profitCalculator',
       displayText: '收益计算器',
-      iconData: FontAwesomeIcons.dollarSign),
+      description: '快捷计算理财产品的收益',
+      iconData: FontAwesomeIcons.dollarSign,
+      routePath: '/profit',
+      backgroundImage: 'ic_tool_profit_cal.jpeg'),
 ];
