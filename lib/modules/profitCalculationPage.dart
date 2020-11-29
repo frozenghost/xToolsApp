@@ -159,7 +159,7 @@ class _ProfitCalculationPageState extends State<ProfitCalculationPage> {
                               showTitleActions: true,
                               minTime: DateTime.now().add(Duration(days: -183)),
                               maxTime: DateTime.now().add(Duration(days: 31)),
-                              currentTime: DateTime.now(),
+                              currentTime: requestDate,
                               locale: LocaleType.zh,
                             ).then((value) {
                               setState(() {

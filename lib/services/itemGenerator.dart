@@ -16,18 +16,21 @@ class ItemGenerator {
         .toList();
   }
 
-  List<Container> getToolModules(BuildContext context) {
+  List<Padding> getToolModules(BuildContext context) {
     return toolModules
         .map(
-          (item) => Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.blue,
-                width: 1.2,
+          (item) => Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.grey,
+                  width: 1.2,
+                ),
               ),
-            ),
-            child: ToolCard(
-              item: item,
+              child: ToolCard(
+                item: item,
+              ),
             ),
           ),
         )

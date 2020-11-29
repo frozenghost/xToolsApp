@@ -25,22 +25,24 @@ class BankProfitCalculator {
   ProfitCalculationResult calculateProfit() {
     ProfitCalculationResult result;
     double profitAmount = 0;
-    DateTime realRequestDate = requestDate;
-    int realKeepDays = keepDays + 1;
+    DateTime realRequestDate =
+        requestDate.add(Duration(days: defaultDelayDate));
+    int realKeepDays = keepDays;
 
-    if (requestDate.weekday == 5) {
-      realRequestDate = requestDate.add(Duration(days: 3));
+    if (realRequestDate.weekday == 6) {
+      realRequestDate = realRequestDate.add(Duration(days: 2));
     } //skip weekend
-    else {
-      realRequestDate = requestDate.add(Duration(days: 1));
+    else if (realRequestDate.weekday == 7) {
+      realRequestDate = realRequestDate.add(Duration(days: 1));
     }
 
-    DateTime buyBackDate = realRequestDate.add(Duration(days: realKeepDays));
+    DateTime buyBackDate =
+        realRequestDate.add(Duration(days: realKeepDays + 1));
     if (buyBackDate.weekday == 6)
       realKeepDays += 2;
     else if (buyBackDate.weekday == 7) realKeepDays += 1;
     profitAmount =
-        fundAmount * profitRate * realKeepDays / 100 / defaultDaysOfYear;
+        fundAmount * profitRate * (realKeepDays + 1) / 100 / defaultDaysOfYear;
     buyBackDate = realRequestDate.add(Duration(days: realKeepDays));
 
     result = ProfitCalculationResult(
@@ -48,7 +50,7 @@ class BankProfitCalculator {
       confirmDate: realRequestDate,
       expectedProfit: profitAmount,
       realKeepDays: realKeepDays,
-      refundDate: buyBackDate,
+      refundDate: buyBackDate.add(Duration(days: defaultBuyBackDelay)),
     );
 
     return result;

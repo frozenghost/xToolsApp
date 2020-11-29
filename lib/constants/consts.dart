@@ -46,4 +46,12 @@ final List<ToolModuleItem> toolModules = [
       iconData: FontAwesomeIcons.dollarSign,
       routePath: '/profit',
       backgroundImage: 'ic_tool_profit_cal.jpeg'),
+  ToolModuleItem(
+      moduleId: 10002,
+      moduleName: 'indexEstimation',
+      displayText: '指数估值',
+      description: '掌握当前基金市场走向',
+      iconData: FontAwesomeIcons.chartLine,
+      routePath: '/index',
+      backgroundImage: 'ic_tool_index.jpg'),
 ];
