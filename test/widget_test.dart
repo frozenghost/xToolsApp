@@ -16,7 +16,7 @@ void main() {
     // Build our app and trigger a frame.
     await tester.pumpWidget(XToolApp());
 
-    await tester.tap(find.byIcon(FontAwesomeIcons.angleDoubleRight));
+    await tester.tap(find.byIcon(FontAwesomeIcons.dollarSign));
     await tester.pumpAndSettle();
 
     // Verify that our counter has incremented.
